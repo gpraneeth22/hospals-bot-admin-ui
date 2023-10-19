@@ -3,10 +3,6 @@ import LoginButton from "@/components/login";
 import { redirect, useRouter } from "next/navigation";
 
 export default async function Home() {
-  const session = await getServerSession()
-  if(session){
-    redirect('/dashboard')
-  }
   
   return (
     <div className="h-screen text-center flex flex-col items-center justify-center">
