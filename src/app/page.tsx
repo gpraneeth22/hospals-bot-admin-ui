@@ -1,14 +1,17 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { signIn } from "next-auth/react";
+import LoginButton from "@/components/login";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession()
+  console.log(session)
   return (
-    <div className="text-center flex flex-col items-center justify-center">
+    <div className="h-screen text-center flex flex-col items-center justify-center">
       <h1 className="text-3xl">Hospals</h1>
-      <Button asChild>
-        <Link href="http://localhost:5000/auth/google">Sign in with Google</Link>
-      </Button>
+      <LoginButton/>
     </div>
   );
 }
