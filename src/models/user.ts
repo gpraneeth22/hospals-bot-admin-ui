@@ -29,6 +29,12 @@ const UserSubscriptionSchema = new mongoose.Schema({
     },
     location: {
         type: Array
+    },
+    city: {
+      type: String
+    },
+    country: {
+      type: String
     }
     
   },)
